@@ -1,9 +1,23 @@
-.navbar {
+.navbar0 {
     background-color: black;
 }
 
-.navbar .container {
+.navbar0 .container {
     display: flex;
     align-items: center;
     justify-content: center;
 }
+
+.navbar{
+    background-color: rgb(0, 0, 0);
+}
+
+.nav-link {
+    color: rgb(255, 221, 0);
+}
+
+/* .navbar #navbarNav {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+} */
