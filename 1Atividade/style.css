@@ -9,13 +9,19 @@ header {
     display: flex;
     justify-content: center;
     align-items: center;
+    margin-bottom: 35px;
 }
 
 a {
-    color: rgb(255, 196, 0);
+    color: rgb(255, 255, 255);
     text-decoration: none;
     font-size: large;
-    font-family: 'Times New Roman', Times, serif;
+    font-family: fantasy;
+}
+
+a:hover {
+    color: rgb(255, 208, 52);
+    transition: 0.25s;
 }
 
 .menu {
@@ -44,11 +50,110 @@ a {
     justify-content: center;
 }
 
-.navbar{
+.navbar {
     background-color: rgb(0, 0, 0);
 }
 
-@media screen and (max-width:1024px) {
+.card {
+    margin-bottom: 17px;
+}
+
+.card-title {
+    display: flex;
+    justify-content: center;
+}
+
+.card-body {
+    text-align: center;
+}
+
+.card .btn {
+    display: flex;
+    justify-content: center;
+}
+
+.btn {
+    background-color: rgb(255, 255, 255);
+    color: rgb(0, 0, 0);
+}
+
+.btn:hover {
+    background-color: rgb(255, 196, 0);
+    color: white;
+}
+
+.centralizar {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 90vh;
+}
+
+.formulario {
+    display: flex;
+    align-items: center;
+    border-radius: 20px;
+    border-color: rgb(174, 174, 174);
+    background-color: rgb(255, 255, 255);
+}
+
+.formImg img {
+    max-width: 100%;
+    height: auto;
+    border-top-left-radius: 20px;
+    border-bottom-left-radius: 20px;
+}
+
+.formTxt {
+    display: flex;
+    margin-left: 30px;
+    margin-right: 30px;
+    color: rgb(0, 0, 0);
+    flex-direction: column;
+    text-align: center;
+}
+
+.formulario .formTxt h2 {
+    display: flex;
+    justify-content: center;
+    align-content: flex-start;
+    font-family: "Arial Black", Gadget, sans-serif;
+    color: rgb(97, 97, 97);
+}
+
+.formTxt #lenviar {
+    margin-top: 10px;
+    border-radius: 17px;
+    padding: 5px;
+    border-color: rgb(224, 224, 224);
+    border: rgb(155, 155, 155);
+    color: rgb(0, 0, 0);
+}
+
+.formTxt #lenviar:hover {
+    transition: 0.35s;
+    border-color: rgb(255, 196, 0);
+    border: rgb(255, 243, 0);
+    background-color: rgb(255, 196, 0);
+    background: rgb(255, 243, 0);
+    color: rgb(255, 255, 255);
+}
+
+.formTxt #lnome {
+    margin-top: 10px;
+    border-radius: 17px;
+    border-color: rgb(184, 184, 184);
+    padding: 4px;
+}
+
+.formTxt #lcomentario {
+    margin-top: 10px;
+    border-radius: 17px;
+    border-color: rgb(184, 184, 184);
+    padding: 4px;
+}
+
+@media screen and (max-width:720px) {
     .menu {
         display: none;
     }
@@ -65,4 +170,3 @@ a {
         display: block;
     }
 }
-
