@@ -556,7 +556,9 @@ footer{
    background: rgb(32, 186, 4);
 }
 
-
+.corFundo {
+    background-color: rgb(244, 244, 244);
+}
 
 
 
