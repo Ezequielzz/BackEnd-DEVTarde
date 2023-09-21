@@ -2,10 +2,10 @@
 require_once 'conectaBD.php';
 session_start();
 if (empty($_SESSION)) {
-// Significa que as variáveis de SESSAO não foram definidas.
-// Não poderia acessar aqui.
-header("Location: index.php?msgErro=Você precisa se autenticar no sistema.");
-die();
+    // Significa que as variáveis de SESSAO não foram definidas.
+    // Não poderia acessar aqui.
+    header("Location: index.php?msgErro=Você precisa se autenticar no sistema.");
+    die();
 }
 $result = array();
 // Verificar se está chegando a informação (id_anuncio) pelo $_GET
@@ -13,36 +13,28 @@ if (!empty($_GET['id_anuncio'])) {
     // Buscar as informações do anúncio a ser alterado (no banco de dados)
     $sql = "SELECT * FROM anuncio WHERE email_usuario = :email AND id = :id";
     try {
-    $stmt = $pdo->prepare($sql);
-    $stmt->execute(array(':email' => $_SESSION['email'], ':id' => $_GET['id_anuncio']));
-    // Verificar se o usuário logado pode acessar/alterar as informações desse registro
-    (id_anuncio)
-    if ($stmt->rowCount() == 1) {
-    // Registro obtido no banco de dados
-    $result = $stmt->fetchAll();
-    $result = $result[0]; // Informações do registro a ser alterado
-    }
-    else {
-    //die("Não foi encontrado nenhum registro para id_anuncio = " . $_GET['id_anuncio']
-     " e e-mail = " . $_SESSION['email'];
-    header("Location: index_logado.php?msgErro=Você não tem permissão para acessar esta
-    página");
-    die();
-    }
+        $stmt = $pdo->prepare($sql);
+        $stmt->execute(array(':email' => $_SESSION['email'], ':id' => $_GET['id_anuncio']));
+        // Verificar se o usuário logado pode acessar/alterar as informações desse registro
+        if ($stmt->rowCount() == 1) {
+            // Registro obtido no banco de dados
+            $result = $stmt->fetchAll();
+            $result = $result[0]; // Informações do registro a ser alterado
+        } else {
+            // Não foi encontrado nenhum registro
+            header("Location: index_logado.php?msgErro=Você não tem permissão para acessar esta página");
+            die();
+        }
     } catch (PDOException $e) {
-    header("Location: index_logado.php?msgErro=Falha ao obter registro no banco de
-    dados.");
-    //die($e->getMessage());
+        header("Location: index_logado.php?msgErro=Falha ao obter registro no banco de dados.");
+        //die($e->getMessage());
     }
-    }
-    else {
+} else {
     // Se entrar aqui, significa que $_GET['id_anuncio'] está vazio
-    header("Location: index_logado.php?msgErro=Você não tem permissão para acessar esta
-    página");
+    header("Location: index_logado.php?msgErro=Você não tem permissão para acessar esta página");
     die();
-    }
-    // Redirecionar (permissão)
-    ?>
+}
+?>
     <html lang="en" dir="ltr">
     <head>
     <meta charset="utf-8">
