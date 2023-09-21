@@ -11,7 +11,7 @@
 <body>
     <div class="container">
         <h1>Olá, seja bem-vindo(a)!!</h1>
-        <form action="processa_login.php" method="post">
+        <form action="processa_login.php" method="post">    
             <div class="col-4">
                 <label for="email">E-mail</label>
                 <input type="email" name="email" id="email" class="form-control">
@@ -20,7 +20,7 @@
                 <label for="senha">Senha</label>
                 <input type="password" name="senha" id="senha" class="form-control">
             </div></br>
-            <button type="submit" name="enviarDados" class="btn btn-primary">Entrar</button>
+            <button type="submit" name="enviarDados" class="btn btn primary">Entrar</button>
             <a href="cad_usuario.php" class="btn btn-warning">Cadastrar-se</a>
         </form>
     </div>
