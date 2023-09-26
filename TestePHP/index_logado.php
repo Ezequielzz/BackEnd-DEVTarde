@@ -1,3 +1,5 @@
+<?php
+
 $anuncios = array();
 if (!empty($_GET['meus_anuncios']) && $_GET['meus_anuncios'] == 1) {
 // Obter somente os anúncios cadastrados pelo(a) usuário(a) logado(a).
@@ -32,7 +34,7 @@ die($e->getMessage());
 }
 
 
-<?php
+
 require_once 'conectaBD.php';
 session_start();
 if (empty($_SESSION)) {

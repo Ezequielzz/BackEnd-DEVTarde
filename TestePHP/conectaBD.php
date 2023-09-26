@@ -2,11 +2,11 @@
     // endereco
     $endereco = '127.0.0.1';
     // nome do BD
-    $banco = 'novo';
+    $banco = 'tutorialbd';
     // usuario
     $usuario = 'root';
     // senha
-    $senha = 'root';
+    $senha = '';
 
 try {
     // sgbd:host;port;dbname
