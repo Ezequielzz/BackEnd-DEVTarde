@@ -1,4 +1,5 @@
 <?php
+global $pdo;
 require_once 'conectaBD.php';
 // Definir o BD (e a tabela)
 // Conectar ao BD (com o PHP)

@@ -9,6 +9,18 @@
 </head>
 
 <body>
+<div class="container">
+    <?php if (!empty($_GET['msgErro'])) { ?>
+        <div class="alert alert-warning" role="alert">
+            <?php echo $_GET['msgErro']; ?>
+        </div>
+    <?php } ?>
+    <?php if (!empty($_GET['msgSucesso'])) { ?>
+        <div class="alert alert-success" role="alert">
+            <?php echo $_GET['msgSucesso']; ?>
+        </div>
+    <?php } ?>
+</div>
     <div class="container">
         <h1>Olá, seja bem-vindo(a)!!</h1>
         <form action="processa_login.php" method="post">    
@@ -24,19 +36,8 @@
             <a href="cad_usuario.php" class="btn btn-warning">Cadastrar-se</a>
         </form>
     </div>
-    <div class="container">
-        <?php if (!empty($_GET['msgErro'])) { ?>
-        <div class="alert alert-warning" role="alert">
-        <?php echo $_GET['msgErro']; ?>
-        </div>
-        <?php } ?>
-        <?php if (!empty($_GET['msgSucesso'])) { ?>
-            <div class="alert alert-success" role="alert">
-                <?php echo $_GET['msgSucesso']; ?>
-                </div>
-                <?php } ?>
-                </div>
+
                 
 </body>
 
-</html
+</html>
